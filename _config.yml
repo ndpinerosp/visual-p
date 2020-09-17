@@ -1,1 +1,2 @@
-theme: jekyll-theme-cayman
+remote_theme: StartBootstrap/startbootstrap-clean-blog-jekyll
+markdown: kramdown
