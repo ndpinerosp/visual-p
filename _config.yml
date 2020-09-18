@@ -7,7 +7,7 @@ baseurl: '/visual-p'
 title: 'Comp Visual'
 description: 'This is my new website'
 permalink: pretty
-logo: "https://es.m.wikipedia.org/wiki/Archivo:Old_Nike_logo.jpg"
+logo: "C"
 
 # Pagination
 paginate: 5
@@ -17,10 +17,11 @@ paginate_path: blog/page:num
 navigation_header:
 - title: Home
   url: /
+- title: Examples
+  url: /blog/
 - title: About
   url: /about/
-- title: Blog
-  url: /blog/
+
 
 # Footer nav
 navigation_footer:

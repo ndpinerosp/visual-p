@@ -7,4 +7,4 @@ I spent a couple hours on a plane on July 4 this year, so I filled the time by p
 ---
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.1/p5.min.js"></script>
-<script src="_proyects/simple.js"> </script>
+<script src="simple.js"> </script>
