@@ -5,9 +5,14 @@ This is a very simple starting point if you wish to use Alembic [as a Jekyll the
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/daviddarnes/alembic-kit)
 
 or
+---
+
+<div id="sketch-holder"></div>
+---
+
 
 **[Download the GitHub Pages kit](https://github.com/daviddarnes/alembic-kit/archive/remote-theme.zip)**
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.1/p5.min.js"></script>
 <script>
 function setup() { 
 	createCanvas(600, 400);
