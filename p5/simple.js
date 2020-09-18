@@ -12,5 +12,7 @@ function draw(){
 	// En modo CENTER, el rectángulo se dibuja en el centro del cursor
 	rectMode(CENTER);
 	// mouseX y mouseY posición del ratón
-	rect(mouseX,mouseY,50,50);
+    mx=constrain(mouseX,0,300);
+    rect(mx,mouseY,50,50);
+    
 }
