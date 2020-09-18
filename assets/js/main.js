@@ -1,5 +1,5 @@
 /*
-	Striped by HTML5 UP
+	Phantom by HTML5 UP
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
@@ -7,16 +7,16 @@
 (function($) {
 
 	var	$window = $(window),
-		$body = $('body'),
-		$document = $(document);
+		$body = $('body');
 
 	// Breakpoints.
 		breakpoints({
-			desktop:   [ '737px',   null     ],
-			wide:      [ '1201px',  null     ],
-			narrow:    [ '737px',   '1200px' ],
-			narrower:  [ '737px',   '1000px' ],
-			mobile:    [ null,      '736px'  ]
+			xlarge:   [ '1281px',  '1680px' ],
+			large:    [ '981px',   '1280px' ],
+			medium:   [ '737px',   '980px'  ],
+			small:    [ '481px',   '736px'  ],
+			xsmall:   [ '361px',   '480px'  ],
+			xxsmall:  [ null,      '360px'  ]
 		});
 
 	// Play initial animations on page load.
@@ -26,45 +26,160 @@
 			}, 100);
 		});
 
-	// Nav.
+	// Touch?
+		if (browser.mobile)
+			$body.addClass('is-touch');
 
-		// Height hack.
-		/*
-			var $sc = $('#sidebar, #content'), tid;
+	// Forms.
+		var $form = $('form');
 
-			$window
-				.on('resize', function() {
-					window.clearTimeout(tid);
-					tid = window.setTimeout(function() {
-						$sc.css('min-height', $document.height());
-					}, 100);
-				})
-				.on('load', function() {
-					$window.trigger('resize');
-				})
-				.trigger('resize');
-		*/
+		// Auto-resizing textareas.
+			$form.find('textarea').each(function() {
 
-		// Title Bar.
-			$(
-				'<div id="titleBar">' +
-					'<a href="#sidebar" class="toggle"></a>' +
-					'<span class="title">' + $('#logo').html() + '</span>' +
-				'</div>'
-			)
-				.appendTo($body);
+				var $this = $(this),
+					$wrapper = $('<div class="textarea-wrapper"></div>'),
+					$submits = $this.find('input[type="submit"]');
 
-		// Sidebar
-			$('#sidebar')
-				.panel({
-					delay: 500,
-					hideOnClick: true,
-					hideOnSwipe: true,
-					resetScroll: true,
-					resetForms: true,
-					side: 'left',
-					target: $body,
-					visibleClass: 'sidebar-visible'
-				});
+				$this
+					.wrap($wrapper)
+					.attr('rows', 1)
+					.css('overflow', 'hidden')
+					.css('resize', 'none')
+					.on('keydown', function(event) {
+
+						if (event.keyCode == 13
+						&&	event.ctrlKey) {
+
+							event.preventDefault();
+							event.stopPropagation();
+
+							$(this).blur();
+
+						}
+
+					})
+					.on('blur focus', function() {
+						$this.val($.trim($this.val()));
+					})
+					.on('input blur focus --init', function() {
+
+						$wrapper
+							.css('height', $this.height());
+
+						$this
+							.css('height', 'auto')
+							.css('height', $this.prop('scrollHeight') + 'px');
+
+					})
+					.on('keyup', function(event) {
+
+						if (event.keyCode == 9)
+							$this
+								.select();
+
+					})
+					.triggerHandler('--init');
+
+				// Fix.
+					if (browser.name == 'ie'
+					||	browser.mobile)
+						$this
+							.css('max-height', '10em')
+							.css('overflow-y', 'auto');
+
+			});
+
+	// Menu.
+		var $menu = $('#menu');
+
+		$menu.wrapInner('<div class="inner"></div>');
+
+		$menu._locked = false;
+
+		$menu._lock = function() {
+
+			if ($menu._locked)
+				return false;
+
+			$menu._locked = true;
+
+			window.setTimeout(function() {
+				$menu._locked = false;
+			}, 350);
+
+			return true;
+
+		};
+
+		$menu._show = function() {
+
+			if ($menu._lock())
+				$body.addClass('is-menu-visible');
+
+		};
+
+		$menu._hide = function() {
+
+			if ($menu._lock())
+				$body.removeClass('is-menu-visible');
+
+		};
+
+		$menu._toggle = function() {
+
+			if ($menu._lock())
+				$body.toggleClass('is-menu-visible');
+
+		};
+
+		$menu
+			.appendTo($body)
+			.on('click', function(event) {
+				event.stopPropagation();
+			})
+			.on('click', 'a', function(event) {
+
+				var href = $(this).attr('href');
+
+				event.preventDefault();
+				event.stopPropagation();
+
+				// Hide.
+					$menu._hide();
+
+				// Redirect.
+					if (href == '#menu')
+						return;
+
+					window.setTimeout(function() {
+						window.location.href = href;
+					}, 350);
+
+			})
+			.append('<a class="close" href="#menu">Close</a>');
+
+		$body
+			.on('click', 'a[href="#menu"]', function(event) {
+
+				event.stopPropagation();
+				event.preventDefault();
+
+				// Toggle.
+					$menu._toggle();
+
+			})
+			.on('click', function(event) {
+
+				// Hide.
+					$menu._hide();
+
+			})
+			.on('keydown', function(event) {
+
+				// Hide on escape.
+					if (event.keyCode == 27)
+						$menu._hide();
+
+			});
 
 })(jQuery);
