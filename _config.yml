@@ -2,12 +2,12 @@
 remote_theme: daviddarnes/alembic
 
 # Site settings
-url: 'https://mydomain.com'
+url: 'https://ndpinerosp.github.io/'
 baseurl: '/visual-p'
-title: 'My website'
+title: 'Comp Visual'
 description: 'This is my new website'
 permalink: pretty
-logo: "https://www.gravatar.com/avatar/6c0377abcf4da91cdd35dea4554b2a4c?s=52"
+logo: "https://es.m.wikipedia.org/wiki/Archivo:Old_Nike_logo.jpg"
 
 # Pagination
 paginate: 5
