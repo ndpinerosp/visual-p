@@ -25,8 +25,8 @@ author: phlow
 
 # This URL is the main address for absolute links. Don't include a slash at the end.
 #
-url: 'https://phlow.github.io'
-baseurl: '/feeling-responsive'
+url: 'https://ndpineros.github.io'
+baseurl: '/visual-p'
 
 # This is for the editing function in _/includes/improve_content
 # Leave it empty if your site is not on GitHub/GitHub Pages
@@ -38,7 +38,7 @@ improve_content: https://github.com/Phlow/feeling-responsive/edit/gh-pages
 # Example: <img src="{{ site.urlimg }}{{ post.image.title }}" />
 # Markdown-Example for posts ![Image Text]({{ site.urlimg }}image.jpg)
 #
-urlimg: 'https://phlow.github.io/feeling-responsive/images/'
+urlimg: 'https://ndpineros.github.io/visual-p/'
 
 
 # Logo size is 600x80 pixels
@@ -80,7 +80,7 @@ exclude:
 
 
 # The language setting is used in /includes/header.html for html-settings
-language: 'en'
+language: 'es'
 
 
 # Used › default.html front-matter and compress.html
@@ -112,7 +112,7 @@ defaults:
       show_meta: false 	# Hide metadata for all pages
       # sidebar:    		# Possible values › left, right › by default there will be no sidebar
       comments: false
-      author: phlow     # Default author for pages
+      author: ndpinerosp    # Default author for pages
   -
     scope:
       path: ''
@@ -121,7 +121,7 @@ defaults:
       show_meta: true   # Show metadata for all posts
       # sidebar:        # Possible values › left, right › by default there will be no sidebar
       comments: false
-      author: phlow     # Default author for posts
+      author: ndpineros    # Default author for posts
 
 
 
