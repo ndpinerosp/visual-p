@@ -42,7 +42,6 @@ function setup() {
   shaderVideo.noStroke();  
   //cam.hide();
   frameRate(60);
-  video.loop();
 }
 
 function draw() {
@@ -114,4 +113,7 @@ function keyPressed() {
 
 function windowResized(){
   resizeCanvas(windowWidth, windowHeight);
+}
+function mousePressed() {
+  video.loop(); // configurar el video para empezar a reproducirse en bucle
 }
