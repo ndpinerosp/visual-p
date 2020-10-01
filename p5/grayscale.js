@@ -17,7 +17,6 @@ img01 = loadImage('https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Pea
   lienzo_01.stroke(111,255,255);
   //lienzo_01.textStyle(BOLDITALIC);
   lienzo_01.textAlign(CENTER);
-  myCanvas.parent('gray');
 } 
 
 function draw() {
