@@ -6,7 +6,8 @@ let lightness ;
 var title = 'VIDEO ORIGINAL';
 var video =0;
 
-function setup() { 
+function preload(){
+
   if(video==1){
   img_01 = createCapture(VIDEO);
   img_02 = createCapture(VIDEO);}
@@ -16,11 +17,16 @@ function setup() {
   }
   img_01.hide();
   img_02.hide();
+}
+
+function setup() { 
+  
   canvas=createCanvas(900, 450);
   canvas.parent('videomask');
   frameRate(60);
   background(255);
   img_01.loop();
+  img_02.loop();
   canvas_01 = createGraphics(450, 450);
   canvas_02 = createGraphics(450, 450);
 }
@@ -189,5 +195,5 @@ const convolution = (x, y, matrix, matrixsize, img)=>{
 
 function mousePressed() {
   //img_01.loop(); // configurar el video para empezar a reproducirse en bucle
-  img_02.loop();
+  //img_02.loop();
 }
