@@ -126,6 +126,7 @@ function keyPressed(){
 const drawCanvas_01 = ()=>{ // Pone el primer video en el lienzo 1
     canvas_01.image(img_01, 0, 0);
     canvas_01.textSize(30);
+    canvas_01.textStyle(BOLDITALIC)
     canvas_01.stroke(255,255,255);
     canvas_01.text(title,20,300);
 }
@@ -133,6 +134,7 @@ const drawCanvas_01 = ()=>{ // Pone el primer video en el lienzo 1
 const drawCanvas_02 = ()=>{ // Pone el segundo video en el lienzo 2
     canvas_02.image(img_02, 0, 0);
     canvas_02.textSize(40);
+    canvas_02.textStyle(BOLDITALIC)
     canvas_02.stroke(255,255,255);
         //  imprime los frames por segundo 
     canvas_02.text( frameRate().toFixed(2) + " F/S" , 20, 300);

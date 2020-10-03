@@ -20,8 +20,8 @@ function setup() {
   lienzo_01 = createGraphics(400, 400);
   imgdest = createImage(img.width,img.height);
   initImage(imgdest);
-  lienzo_01.textSize(18);
-  lienzo_01.stroke(111,255,255);
+  lienzo_01.textSize(20);
+  //lienzo_01.stroke(111,255,255);
   lienzo_01.textStyle(BOLDITALIC);
   //lienzo_01.textAlign(CENTER);
   //myCanvas.parent('gray');
@@ -39,8 +39,9 @@ image(imgdest,400,0,400,400);
 }
 function drawImage1(){
   img01.resize(400,400);
+  lienzo_01.fill(255)
   lienzo_01.image(img01, 0, 0); 
-  lienzo_01.text(title, 15, 20);
+  lienzo_01.text(title, 15, 40);
 }
 function drawImage2(input,output){
   input.loadPixels();

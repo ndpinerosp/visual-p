@@ -18,33 +18,35 @@ function preload(){
 }
 
 function setup() { 
-  var myCanvas = createCanvas(1100, 450);
-  background(210);
+  var myCanvas = createCanvas(900, 450);
+  background(255);
   pixelDensity();
 
   
 
-  lienzo_01 = createGraphics(500, 450);
-  lienzo_02 = createGraphics(600, 450);
+  lienzo_01 = createGraphics(500, 400);
+  lienzo_02 = createGraphics(600, 400);
 
-  lienzo_01.textSize(18);
-  lienzo_01.stroke(111,255,255);
+  lienzo_01.textSize(27);
+  lienzo_01.stroke(255,255,255);
   lienzo_01.textStyle(BOLDITALIC);
   lienzo_01.textAlign(CENTER);
   //myCanvas.parent('conv');
+  
 } 
 
 function draw() {
     drawImage_01();
     drawImage_02();
-
+    
     image(lienzo_01, 0, 0);
   image(lienzo_02, 550, 0);  
 }
 // Dibuja la imagen de la Izquierda
 function drawImage_01() {
+  scale(0.8);
   lienzo_01.image(img_01, 0, 0); 
-  lienzo_01.text(title, 0, 20,lienzo_01.width); 
+  lienzo_01.text(title, 0, 30,lienzo_01.width); 
 }
 // Dibuja la imagen de la Derecha
 function drawImage_02() {

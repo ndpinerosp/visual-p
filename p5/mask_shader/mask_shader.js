@@ -30,7 +30,7 @@ function setup() {
   //cam.size(windowWidth, windowHeight); //definde el tamaño de la captura
   
   // Se requiere trabajar con WEBGL
-  createCanvas(700, 500, WEBGL);
+  createCanvas(900, 500, WEBGL);
   noStroke();
 
   // inicializar la capa del createGraphics
@@ -46,7 +46,7 @@ function setup() {
 }
 
 function draw() {
-  background(150);
+  background(255);
   videomask();
   imagemask();    
 }
@@ -63,14 +63,14 @@ function videomask(){
   
   
   //ellipse(0, 0, 300, 300);
-  image(shaderVideo,-350,-250,700,500);
+  image(shaderVideo,-390,-250,700,500);
   
   fill(255);
   textFont(font);
   textSize(40);
-  text(frameRate().toFixed(2) + " F/S",-290,-150)
+  text(frameRate().toFixed(2) + " F/S",-350,-170)
   textSize(30);
-  text(texto,-290,150)
+  text(texto,-350,170)
   
 } 
 function imagemask(){
@@ -85,7 +85,7 @@ function imagemask(){
   shaderTexture.rect(0,0,width,height);
   noStroke();
   texture(shaderTexture);
-  circle(200, 0, 300);
+  circle(300, 0, 300);
 } 
 
 // Se ejecuta cuando se presiona cualquier tecla
@@ -118,4 +118,7 @@ function keyPressed() {
 	mask = 8;
  texto ='DESENFOQUE DE GAUSSIANO'
 	} 
+}
+function mousePressed() {
+  video.loop(); // configurar el video para empezar a reproducirse en bucle
 }

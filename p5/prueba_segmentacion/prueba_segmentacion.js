@@ -9,7 +9,7 @@ var sketch = function (p) {
   let lum, imgdest;
   let click=0, init,end;
   let fclick= [0,255];
-  let histolimits = [387, 554, 440, 623];
+  let histolimits = [487, 654, 440, 623];
   var plot;
   let histofilter=false;
   
@@ -47,8 +47,9 @@ p.drawcanvas1 = function(){
 img2.resize(400,400);
 canvas1.image(img2,0,0); 
 canvas1.textSize(25);
-canvas1.stroke(111,255,255);
-canvas1.text(title, 10 ,40);
+//canvas1.textStyle(BOLDITALIC);
+canvas1.fill(255,255,255);
+canvas1.text(title, 10 ,50);
 }
 
  p.initImage = function(input){
@@ -81,7 +82,7 @@ var points=[];
   for (var j = 0; j <256; j++){
             points[j] = new GPoint(j, histogram[j]);
         }
-  plot = new GPlot(p,300,400,300,300);
+  plot = new GPlot(p,400,400,300,300);
    
 
         // Set the plot title and the axis labels
