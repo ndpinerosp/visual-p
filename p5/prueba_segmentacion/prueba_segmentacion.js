@@ -333,4 +333,4 @@ p.mouseClicked =function() {
     }
   };
 
-var myp5 = new p5(sketch);
+var myp5 = new p5(sketch,'seg');

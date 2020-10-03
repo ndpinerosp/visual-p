@@ -11,15 +11,18 @@ var matrix = [ [  0,  0,  0 ],
                [  0,  1,  0 ],
                [  0,  0,  0 ] ];
 var title = 'IDENTIDAD';
+function preload(){
+  img_01 = loadImage('https://upload.wikimedia.org/wikipedia/commons/b/b8/Panther_Chameleon_%28Furcifer_pardalis%29.jpg');
+  img_02 = loadImage('https://upload.wikimedia.org/wikipedia/commons/b/b8/Panther_Chameleon_%28Furcifer_pardalis%29.jpg');
 
+}
 
 function setup() { 
   var myCanvas = createCanvas(1100, 450);
   background(210);
   pixelDensity();
 
-  img_01 = loadImage('https://upload.wikimedia.org/wikipedia/commons/b/b8/Panther_Chameleon_%28Furcifer_pardalis%29.jpg');
-  img_02 = loadImage('https://upload.wikimedia.org/wikipedia/commons/b/b8/Panther_Chameleon_%28Furcifer_pardalis%29.jpg');
+  
 
   lienzo_01 = createGraphics(500, 450);
   lienzo_02 = createGraphics(600, 450);
@@ -28,7 +31,7 @@ function setup() {
   lienzo_01.stroke(111,255,255);
   lienzo_01.textStyle(BOLDITALIC);
   lienzo_01.textAlign(CENTER);
-  myCanvas.parent('conv');
+  //myCanvas.parent('conv');
 } 
 
 function draw() {

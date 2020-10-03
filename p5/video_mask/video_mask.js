@@ -5,21 +5,24 @@ let gray;
 let lightness ;
 var title = 'VIDEO ORIGINAL';
 var video =0;
-
+function preload(){
+    if(video==1){
+        img_01 = createCapture(VIDEO);
+        img_02 = createCapture(VIDEO);}
+    else{
+        img_01 = createVideo('https://dm0qx8t0i9gc9.cloudfront.net/previews/video/YSvEcxy/videoblocks-alligators-eye-close-up-of-a-live-alligators-eye-crocodile-caiman-dinosaur-monster_rmlq8ertq__cb8b5c0c7799d4c97439ed0d1d639f09__P360.mp4');
+        img_02 = createVideo('https://dm0qx8t0i9gc9.cloudfront.net/previews/video/YSvEcxy/videoblocks-alligators-eye-close-up-of-a-live-alligators-eye-crocodile-caiman-dinosaur-monster_rmlq8ertq__cb8b5c0c7799d4c97439ed0d1d639f09__P360.mp4');
+        }
+}
 function setup() { 
-  if(video==1){
-  img_01 = createCapture(VIDEO);
-  img_02 = createCapture(VIDEO);}
-  else{
-  img_01 = createVideo('https://dm0qx8t0i9gc9.cloudfront.net/previews/video/YSvEcxy/videoblocks-alligators-eye-close-up-of-a-live-alligators-eye-crocodile-caiman-dinosaur-monster_rmlq8ertq__cb8b5c0c7799d4c97439ed0d1d639f09__P360.mp4');
-  img_02 = createVideo('https://dm0qx8t0i9gc9.cloudfront.net/previews/video/YSvEcxy/videoblocks-alligators-eye-close-up-of-a-live-alligators-eye-crocodile-caiman-dinosaur-monster_rmlq8ertq__cb8b5c0c7799d4c97439ed0d1d639f09__P360.mp4');
-  }
+  
   img_01.hide();
   img_02.hide();
   createCanvas(900, 450);
   frameRate(60);
   background(255);
-
+  img_01.loop();
+  img_02.loop();
   canvas_01 = createGraphics(450, 450);
   canvas_02 = createGraphics(450, 450);
 }

@@ -5,6 +5,7 @@ var lienzo_01;
 var lienzo_02;
 var title = 'IMAGEN ORIGINAL';
 let imgdest;
+let rgb=[];
 
  function preload() {
   img = loadImage('https://upload.wikimedia.org/wikipedia/commons/0/02/Fire_breathing_2_Luc_Viatour.jpg');
@@ -21,8 +22,9 @@ function setup() {
   initImage(imgdest);
   lienzo_01.textSize(18);
   lienzo_01.stroke(111,255,255);
-  //lienzo_01.textStyle(BOLDITALIC);
-  myCanvas.parent('gray');
+  lienzo_01.textStyle(BOLDITALIC);
+  //lienzo_01.textAlign(CENTER);
+  //myCanvas.parent('gray');
 } 
 
 function draw() {
@@ -51,16 +53,17 @@ function drawImage2(input,output){
             let g=input.pixels[index+1]; // Componente Green
             let b=input.pixels[index+2]; // Componente Blue
       
+			rgb=[r,g,b];
       if (gray===1){
         let I=(r+g+b)/3; // Promedio de los tres componentes
         lightness = I;
         title = 'MEDIA ARITMÉTICA';
       } else if (gray===2){
-        let V= max(r,g,b); // Componente mas grande de un color
+        let V= max(rgb); // Componente mas grande de un color
         lightness = V;
         title = 'COMPONENTE MÁS GRANDE';
       } else if (gray===3){
-        let L=(max(r,g,b)+min(r,g,b))/2; // Promedio entre el componente mas grande y el mas pequeño
+        let L=(max(rgb)+min(rgb))/2; // Promedio entre el componente mas grande y el mas pequeño
         lightness = L;
         title = 'RANGO MEDIO';
       } else if (gray===4){ // Promedio ponderado de RGB con corrección gamma (Luma)
