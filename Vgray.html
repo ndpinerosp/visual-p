@@ -77,11 +77,24 @@
 												</ul>
 											</header>
 											<section>
+												<p>
+													Una de las características más importantes en el procesamiento de videos es la frecuencia de fotogramas por segundo, el cerebro humano tiene la capacidad de procesar
+													 de 10 a 12 fotogramas por segundo; en caso de aumentar esa tasa. el cerebro lo percibe como movimiento, característica muy importante al momento de exponer una imagen.
+													<br><br>
+													Al igual que en el estudio de procesamiento de imágenes, que se vio en el ejemplo <a>Image GrayScale</a>
+													se realizó la siguiente implementación que muestra cómo realizar el procesamiento e implementacion de mascaras de convolucion en videos. 
+													Para este fin se crearon dos lienzos, el primero permite visualizar el video original, el segundo lienzo es el encargado de mostrar los cambios
+													realizados en tiempo real.
+													<br><br>
+													La siguiente implementación se encarga de medir la tasa de fotogramas por segundo, al realizar la razón entre la cantidad de fotogramas que se expusieron desde el tiempo 0 hasta la actualidad y
+													 la variables que se encarga de obtener la diferencia de tiempo transcurrido en el paso de los fotogramas. Adicionalmente 
+													 muestra los cambios al aplicar las diferentes mascaras de convolucion, utilizando los mismos algoritmos que permitieron realizar el procesamiento de imágenes en los ejemplos anteriores, pero esta vez modificando los pixeles de una imagen capturada por video.
+												</p>
 												<div class="table-wrapper text-center" >
 													<table>
 														<thead>
 															<th>Tecla</th>
-															<th>Luminancia</th>
+															<th>Operacion</th>
 															<th>Expresion</th>
 															<th>Eficiencia</th>
 														</thead>
@@ -146,51 +159,14 @@
 													<iframe src="p5/software/video_gray/index.html" style="position:center;height:450px;width:900px"></iframe>
 												</div>
 										
-										<p>
+										
 												<p>
-													Phasellus quam turpis, feugiat sit amet ornare in, hendrerit in lectus.
-													Praesent semper mod quis eget mi. Etiam eu ante risus. Aliquam erat volutpat.
-													Aliquam luctus et mattis lectus sit amet pulvinar. Nam turpis nisi
-													consequat etiam lorem ipsum dolor sit amet nullam.
+													Como podemos observar en la implementacion, la tasa de fotogramas por segundo decae con respecto a su valor original, pero en el caso de las escalas
+													grises , tiene un bien comportamiento ya que no se observa demasiada interrupcion en la fluidez del movimiento que representa el video. 
 												</p>
 											</section>
 
-											<section>
-												<h3>More intriguing information</h3>
-												<p>
-													Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ac quam risus, at tempus
-													justo. Sed dictum rutrum massa eu volutpat. Quisque vitae hendrerit sem. Pellentesque lorem felis,
-													ultricies a bibendum id, bibendum sit amet nisl. Mauris et lorem quam. Maecenas rutrum imperdiet
-													vulputate. Nulla quis nibh ipsum, sed egestas justo. Morbi ut ante mattis orci convallis tempor.
-													Etiam a lacus a lacus pharetra porttitor quis accumsan odio. Sed vel euismod nisi. Etiam convallis
-													rhoncus dui quis euismod. Maecenas lorem tellus, congue et condimentum ac, ullamcorper non sapien
-													vulputate. Nulla quis nibh ipsum, sed egestas justo. Morbi ut ante mattis orci convallis tempor.
-													Etiam a lacus a lacus pharetra porttitor quis accumsan odio. Sed vel euismod nisi. Etiam convallis
-													rhoncus dui quis euismod. Maecenas lorem tellus, congue et condimentum ac, ullamcorper non sapien.
-													Donec sagittis massa et leo semper a scelerisque metus faucibus. Morbi congue mattis mi.
-													Phasellus sed nisl vitae risus tristique volutpat. Cras rutrum commodo luctus.
-												</p>
-											</section>
-
-											<section>
-												<h3>So in conclusion ...</h3>
-												<p>
-													Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ac quam risus, at tempus
-													justo. Sed dictum rutrum massa eu volutpat. Quisque vitae hendrerit sem. Pellentesque lorem felis,
-													ultricies a bibendum id, bibendum sit amet nisl. Mauris et lorem quam. Maecenas rutrum imperdiet
-													vulputate. Nulla quis nibh ipsum, sed egestas justo. Morbi ut ante mattis orci convallis tempor.
-													Etiam a lacus a lacus pharetra porttitor quis accumsan odio. Sed vel euismod nisi. Etiam convallis
-													rhoncus dui quis euismod. Maecenas lorem tellus, congue et condimentum ac, ullamcorper non sapien.
-													Donec sagittis massa et leo semper a scelerisque metus faucibus. Morbi congue mattis mi.
-													Phasellus sed nisl vitae.
-												</p>
-												<p>
-													Suspendisse laoreet metus ut metus imperdiet interdum aliquam justo tincidunt. Mauris dolor urna,
-													fringilla vel malesuada ac, dignissim eu mi. Praesent mollis massa ac nulla pretium pretium.
-													Maecenas tortor mauris, consectetur pellentesque dapibus eget, tincidunt vitae arcu.
-												</p>
-											</section>
-
+											
 										</article>
 
 								</div>

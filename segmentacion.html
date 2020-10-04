@@ -78,16 +78,21 @@
 											</header>
 											<section>
 												<p>
-													El histograma es una representación gráfica de la distribución de los distintos tonos de una imagen. Esta es posible gracias a la distribución de pixeles de una fotografía con base a su luminosidad. Esta herramienta puede ayudarnos a controlar la exposición en nuestras fotos, así como para corregir los colores.
-
-El histograma representa, en el eje horizontal, la distribución de sombras, tonos medios y luces (de izquierda a derecha). En el eje vertical, el número de pixeles de la imagen que tienen tal luminosidad.
-
-De este modo, la superficie de cada una de las barras que forman el histograma refleja la mayor o menor frecuencia de pixeles de la imagen que tienen cada valor de luminosidad.
+												
+													El histograma es una representación gráfica de la distribución de los distintos tonos de una imagen. Esta es posible gracias a la distribución de pixeles de una fotografía con base a su luminosidad. 
+													Esta herramienta puede ayudarnos a controlar la exposición en nuestras fotos, así como para corregir los colores.
+													<br><br>
+													El histograma representa, en el eje horizontal, la distribución de sombras, tonos medios y luces (de izquierda a derecha). En el eje vertical, el número de pixeles de la imagen que tienen tal luminosidad.
+													
+													De este modo, la superficie de cada una de las barras que forman el histograma refleja la mayor o menor frecuencia de pixeles de la imagen que tienen cada valor de luminosidad.
 												</p>
 												<img src="images/histograma01.jpg" style="width:500px;vertical-align: middle" class="centro" >
 												<br>
 												<br>
 												Es importante aclarar que un histograma no indica si la imagen esta mal, simplemente ayuda al observador como herramienta para que exponga la imagen como lo desea, por ejemplo el histograma nos permite identificar algunos aspectos como:
+												<br>
+												<br>
+
 												<div class="table-wrapper text-center" >
 													<table>
 														<thead>
@@ -100,17 +105,16 @@ De este modo, la superficie de cada una de las barras que forman el histograma r
 																<td>
 																	<strong>Sombras o zonas oscuras</strong>
 																	<br>
-																	hola
+																	Imagen con muchas zonas en sombra o gran parte en negro, generalmente tiene un pico en el extremo izquierdo del histograma.
 																</td>
 																
 															</tr>
 															<tr>
 																<td><img src="images/s_palidas.jpg" style="width:400px;vertical-align: middle" ></td>
 																<td>
-																	
 																	<strong>Sombras Palidas</strong>
 																	<br>
-																	hola
+																	Imágenes pálidas, sin zonas oscuras, No hay zonas quemadas porque no hay un pico en la derecha.
 																</td>
 																
 															</tr>
@@ -119,7 +123,7 @@ De este modo, la superficie de cada una de las barras que forman el histograma r
 																<td>
 																	<strong>Contraluz</strong>
 																	<br>
-																	hola
+																	Para imagenes en contraluz el histograma tiene forma de U, mostrando pocas zonas grises.
 																</td>
 																
 															</tr>
@@ -128,7 +132,7 @@ De este modo, la superficie de cada una de las barras que forman el histograma r
 																<td>
 																	<strong>Tonos Apagados</strong>
 																	<br>
-																	hola
+																	Puede observarse que la imagen está oscura, el histograma tiende a desplazarse a la izquierda . 
 																</td>
 																
 															</tr>
@@ -137,7 +141,7 @@ De este modo, la superficie de cada una de las barras que forman el histograma r
 																<td>
 																	<strong>Distribucion Homogenea</strong>
 																	<br>
-																	hola
+																	En una imagen homogénea el histograma se distribuye a lo largo . Al no haber zonas quemadas ni excesivamente oscuras.
 																</td>
 																
 															</tr>
@@ -147,7 +151,17 @@ De este modo, la superficie de cada una de las barras que forman el histograma r
 												</div>
 												<p>
 													Podemos identificar sobreexposición de la luz y zonas quemadas, entre otras más. Esta información está basada 
-													en el artículo de referencia <a href="https://sietefotografos.com/que-es-el-histograma/">sietefotografos.com</a>.
+													en el artículo de referencia <a href="https://sietefotografos.com/que-es-el-histograma/">sietefotografos.com</a>
+													<br><br>
+													La segmentación de imágenes es el proceso de dividir una imagen digital en múltiples segmentos. El objetivo de la segmentación es simplificar y / o cambiar la representación de una imagen en algo más significativo y más fácil de analizar.
+													La segmentación de imágenes se utiliza normalmente para localizar objetos y límites (líneas, curvas, etc.) en imágenes. Más precisamente, la segmentación de imágenes es el proceso de asignar una etiqueta a cada píxel de una imagen de manera que los píxeles con la misma etiqueta compartan ciertas características.
+													<br><br>
+													<img src="images/segmentation.png" style="width:50%" class="centro">
+													<p style="text-align:center"> Image of Polarlicht . Source: Image Segmentation Wikipedia, the free encyclopedia.</p>
+											
+													La segmentacion de imagenes aplicada para el ejemplo es basada en el histograma, usando el histograma de imagen en escala de grises, para una facilidad 
+													en la seleccion de la zona a segmentar. la informacion de la segmentacion esta basados en <a href="https://en.wikipedia.org/wiki/Image_segmentation">Image Segmentation</a>
+													<br><br>
 												</p>
 
 												<hr>
@@ -212,52 +226,23 @@ De este modo, la superficie de cada una de las barras que forman el histograma r
 												<div style="width:800px; margin:0 auto;">
 													<iframe src="p5/software/prueba_segmentacion/index.html" style="position:center;height:700px;width:800px"></iframe>
 												</div>
+
+												<p>
+													La segmentacion aplicada anterirormente, se hace basado unicamente en el histograma generado por escala de grises, por lo cual al seleccionar la seccion a segmentar
+													podemos observar, como unicamente se pintan los pixeles de la imagen que se encuentran dentro de ese rango, y los que se encuentran fuera de ese rango, no son mostrados.
+													<br><br>
+													Adicionalmente con esto podremos observar cuales son las secciones mas claras o las mas oscuras de la imagen, dependiendo de el rango de segmentacion seleccionado y por 
+													ultimo nos permite observar a que pueden deberse los picos en el histograma, mostrandonos su representacion en la imagen misma.
+
+												</p>
+
+											</section>
+
+											
+												
+											
+
 										
-										<p>
-												<p>
-													Phasellus quam turpis, feugiat sit amet ornare in, hendrerit in lectus.
-													Praesent semper mod quis eget mi. Etiam eu ante risus. Aliquam erat volutpat.
-													Aliquam luctus et mattis lectus sit amet pulvinar. Nam turpis nisi
-													consequat etiam lorem ipsum dolor sit amet nullam.
-												</p>
-											</section>
-
-											<section>
-												<h3>More intriguing information</h3>
-												<p>
-													Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ac quam risus, at tempus
-													justo. Sed dictum rutrum massa eu volutpat. Quisque vitae hendrerit sem. Pellentesque lorem felis,
-													ultricies a bibendum id, bibendum sit amet nisl. Mauris et lorem quam. Maecenas rutrum imperdiet
-													vulputate. Nulla quis nibh ipsum, sed egestas justo. Morbi ut ante mattis orci convallis tempor.
-													Etiam a lacus a lacus pharetra porttitor quis accumsan odio. Sed vel euismod nisi. Etiam convallis
-													rhoncus dui quis euismod. Maecenas lorem tellus, congue et condimentum ac, ullamcorper non sapien
-													vulputate. Nulla quis nibh ipsum, sed egestas justo. Morbi ut ante mattis orci convallis tempor.
-													Etiam a lacus a lacus pharetra porttitor quis accumsan odio. Sed vel euismod nisi. Etiam convallis
-													rhoncus dui quis euismod. Maecenas lorem tellus, congue et condimentum ac, ullamcorper non sapien.
-													Donec sagittis massa et leo semper a scelerisque metus faucibus. Morbi congue mattis mi.
-													Phasellus sed nisl vitae risus tristique volutpat. Cras rutrum commodo luctus.
-												</p>
-											</section>
-
-											<section>
-												<h3>So in conclusion ...</h3>
-												<p>
-													Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ac quam risus, at tempus
-													justo. Sed dictum rutrum massa eu volutpat. Quisque vitae hendrerit sem. Pellentesque lorem felis,
-													ultricies a bibendum id, bibendum sit amet nisl. Mauris et lorem quam. Maecenas rutrum imperdiet
-													vulputate. Nulla quis nibh ipsum, sed egestas justo. Morbi ut ante mattis orci convallis tempor.
-													Etiam a lacus a lacus pharetra porttitor quis accumsan odio. Sed vel euismod nisi. Etiam convallis
-													rhoncus dui quis euismod. Maecenas lorem tellus, congue et condimentum ac, ullamcorper non sapien.
-													Donec sagittis massa et leo semper a scelerisque metus faucibus. Morbi congue mattis mi.
-													Phasellus sed nisl vitae.
-												</p>
-												<p>
-													Suspendisse laoreet metus ut metus imperdiet interdum aliquam justo tincidunt. Mauris dolor urna,
-													fringilla vel malesuada ac, dignissim eu mi. Praesent mollis massa ac nulla pretium pretium.
-													Maecenas tortor mauris, consectetur pellentesque dapibus eget, tincidunt vitae arcu.
-												</p>
-											</section>
-
 										</article>
 
 								</div>

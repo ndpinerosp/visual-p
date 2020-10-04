@@ -78,6 +78,19 @@
 												</ul>
 											</header>
 											<section>
+												<p>
+													Una de las características más importantes en el procesamiento de videos es la frecuencia de fotogramas por segundo, el cerebro humano tiene la capacidad de procesar
+													 de 10 a 12 fotogramas por segundo; en caso de aumentar esa tasa. el cerebro lo percibe como movimiento, característica muy importante al momento de exponer una imagen.
+													<br><br>
+													Al igual que en el estudio de procesamiento de imágenes, que se vio en el ejemplo <a>Image Convolution Matrix</a>
+													se realizó la siguiente implementación que muestra cómo realizar el procesamiento de escala de grises en videos. 
+													Para este fin se crearon dos lienzos, el primero permite visualizar el video original, el segundo lienzo es el encargado de mostrar los cambios
+													realizados en tiempo real.
+													<br><br>
+													La siguiente implementación se encarga de medir la tasa de fotogramas por segundo, al realizar la razón entre la cantidad de fotogramas que se expusieron desde el tiempo 0 hasta la actualidad y
+													 la variables que se encarga de obtener la diferencia de tiempo transcurrido en el paso de los fotogramas. Adicionalmente 
+													 muestra los cambios al aplicar diferentes escalas de grises, utilizando los mismos algoritmos que permitieron realizar el procesamiento de imágenes en los ejemplos anteriores, pero esta vez modificando los pixeles de una imagen capturada por video.
+												</p>
 												<div class="table-wrapper text-center" >
 													<table>
 														<thead>
@@ -139,57 +152,23 @@
 															</tr>
 														</tbody>
 													</table>
+											</section>
 
 											<section>
 												<div style="width:800px; margin:0 auto;">
 													<iframe src="p5/software/video_mask/index.html" style="position:center;height:450px;width:900px"></iframe>
 												</div>
+							
+												<p>
+													Como podemos observar en la implementacion, la tasa de fotogramas por segundo decae con respecto a su valor original, pero en comparacion al ejemplo de escala de grises 
+													este tiene un muy mal comportamiento,ya que se observa muy poca fluidez del movimiento en el video, llegando a observarse el moviviento en aproximadamente 2 F/S, por lo cual
+													se puede decir que el procesamiento de las mascaras se hace mas complejo, por tanto no puede procesarlo tan rapido, reduciendo asi la fluidez del video. 
+											</p>
+											</section>
+											
 										
-										<p>
-												<p>
-													Phasellus quam turpis, feugiat sit amet ornare in, hendrerit in lectus.
-													Praesent semper mod quis eget mi. Etiam eu ante risus. Aliquam erat volutpat.
-													Aliquam luctus et mattis lectus sit amet pulvinar. Nam turpis nisi
-													consequat etiam lorem ipsum dolor sit amet nullam.
-												</p>
-											</section>
 
-											<section>
-												<h3>More intriguing information</h3>
-												<p>
-													Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ac quam risus, at tempus
-													justo. Sed dictum rutrum massa eu volutpat. Quisque vitae hendrerit sem. Pellentesque lorem felis,
-													ultricies a bibendum id, bibendum sit amet nisl. Mauris et lorem quam. Maecenas rutrum imperdiet
-													vulputate. Nulla quis nibh ipsum, sed egestas justo. Morbi ut ante mattis orci convallis tempor.
-													Etiam a lacus a lacus pharetra porttitor quis accumsan odio. Sed vel euismod nisi. Etiam convallis
-													rhoncus dui quis euismod. Maecenas lorem tellus, congue et condimentum ac, ullamcorper non sapien
-													vulputate. Nulla quis nibh ipsum, sed egestas justo. Morbi ut ante mattis orci convallis tempor.
-													Etiam a lacus a lacus pharetra porttitor quis accumsan odio. Sed vel euismod nisi. Etiam convallis
-													rhoncus dui quis euismod. Maecenas lorem tellus, congue et condimentum ac, ullamcorper non sapien.
-													Donec sagittis massa et leo semper a scelerisque metus faucibus. Morbi congue mattis mi.
-													Phasellus sed nisl vitae risus tristique volutpat. Cras rutrum commodo luctus.
-												</p>
-											</section>
-
-											<section>
-												<h3>So in conclusion ...</h3>
-												<p>
-													Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ac quam risus, at tempus
-													justo. Sed dictum rutrum massa eu volutpat. Quisque vitae hendrerit sem. Pellentesque lorem felis,
-													ultricies a bibendum id, bibendum sit amet nisl. Mauris et lorem quam. Maecenas rutrum imperdiet
-													vulputate. Nulla quis nibh ipsum, sed egestas justo. Morbi ut ante mattis orci convallis tempor.
-													Etiam a lacus a lacus pharetra porttitor quis accumsan odio. Sed vel euismod nisi. Etiam convallis
-													rhoncus dui quis euismod. Maecenas lorem tellus, congue et condimentum ac, ullamcorper non sapien.
-													Donec sagittis massa et leo semper a scelerisque metus faucibus. Morbi congue mattis mi.
-													Phasellus sed nisl vitae.
-												</p>
-												<p>
-													Suspendisse laoreet metus ut metus imperdiet interdum aliquam justo tincidunt. Mauris dolor urna,
-													fringilla vel malesuada ac, dignissim eu mi. Praesent mollis massa ac nulla pretium pretium.
-													Maecenas tortor mauris, consectetur pellentesque dapibus eget, tincidunt vitae arcu.
-												</p>
-											</section>
-
+											
 										</article>
 
 								</div>

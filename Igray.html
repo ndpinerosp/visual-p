@@ -79,9 +79,13 @@
 											</header>
 											<section>
 												<p>
-													A continuación, se observará cómo se puede obtener una imagen a escala de grises a partir del Promedio de los componentes RGB de una imagen y el caculo del coeficiente Luma. Para ello este estudio esta basado en la documentación HSL and HSV y en gran medida estará basado en el ejemplo BLACK AND WHITE anteriormente trabajado, por lo tanto, no se profundizará en los cálculos de las expresiones, sino en la manera de aplicar estas expresiones a nuestro programa en p5.js para modificar la luminancia de la imagen y obtener los resultados esperados.
+													Ahora podremos ver como se puede obtener una imagen a escala de grises a partir del Promedio de los componentes RGB de una imagen 
+													y el calculo del coeficiente Luma. Para ello la informacion de las ecuaciones esta basada en la pagina de wikipedia <a href="https://en.wikipedia.org/wiki/HSL_and_HSV">HSL and HSV</a>
+													, por lo tanto podermos ver como aplicar esto en P5.js para modificar la luminancia de la imagen y obtener los resultados esperados.
 												<br>
-												Para obtener una imagen a escala de grises por medio del siguiente programa, bastará con acceder al componente RGB de cada pixel de la imagen, hacer el cálculo del Promedio RGB o el coeficiente Luma utilizando las expresiones descritas en la tabla de Comandos por Teclado y por último se reemplazará el valor obtenido en cada uno de los componentes de color RGB del pixel. Adicionalmente también se observarán otras posibilidades para modificar la luminancia de la imagen y obtener la imagen a escala de grises a partir del calculo del Componente mas grande, el Rango medio y el Valor de Munsell visto en la documentación Lightness.
+												<br>
+												Para obtener una imagen a escala de grises por medio del siguiente programa, solo deberemos acceder al componente RGB de cada pixel de la imagen,
+												hacer el cálculo para el <strong>Promedio RGB</strong> o el coeficiente <strong>Luma </strong> usando las expresiones mostradas a continuacion y por último colocar el valor obtenido en los componentes RGB del pixel. 
 												</p>
 												<hr>
 												<h4>Comandos por Teclado</h4>
@@ -89,7 +93,7 @@
 													<table>
 														<thead>
 															<th>Tecla</th>
-															<th>Luminancia</th>
+															<th>Operacion</th>
 															<th>Expresion</th>
 														</thead>
 														<tbody>
@@ -167,8 +171,7 @@
 														<a href="Vgray.html" class="image featured"><img src="images/pic02.jpg" alt="" /></a>
 														<h3><a href="Vgray.html">Video GrayScale</a></h3>
 														<p>
-															Phasellus quam turpis, feugiat sit amet ornare in, a hendrerit in
-															lectus dolore. Praesent semper mod quis eget sed etiam eu ante risus.
+															Rgb Average and luma coefficient, Frame rate
 														</p>
 													</section>
 
@@ -180,8 +183,7 @@
 														<a href="Imask.html" class="image featured"><img src="images/pic04.jpg" alt="" /></a>
 														<h3><a href="Imask.html">Image Convolution Matrix</a></h3>
 														<p>
-															Phasellus quam turpis, feugiat sit amet ornare in, a hendrerit in
-															lectus dolore. Praesent semper mod quis eget sed etiam eu ante risus.
+															Blur, Sharpen, Emboss, Edge Detection,Unsharp and more.
 														</p>
 													</section>
 
@@ -193,8 +195,7 @@
 														<a href="Vmask.html" class="image featured"><img src="images/pic03.jpg" alt="" /></a>
 														<h3><a href="Vmask.html">Video Convolution Matrix</a></h3>
 														<p>
-															Phasellus quam turpis, feugiat sit amet ornare in, a hendrerit in
-															lectus dolore. Praesent semper mod quis eget sed etiam eu ante risus.
+															Blur, Sharpen, Emboss, Edge Detection,Unsharp, Framerate and more. 
 														</p>
 													</section>
 
@@ -206,8 +207,7 @@
 														<a href="segmentacion.html" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
 														<h3><a href="segmentacion.html">Image Segmentation</a></h3>
 														<p>
-															Phasellus quam turpis, feugiat sit amet ornare in, a hendrerit in
-															lectus dolore. Praesent semper mod quis eget sed etiam eu ante risus.
+															Graphical representation of the tonal distibution
 														</p>
 													</section>
 

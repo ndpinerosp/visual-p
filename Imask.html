@@ -71,7 +71,7 @@
 
 											<header>
 												<h2>Image Convolution Matrix</h2>
-												<p>BLUR, SHARPEN, EMBOSS, EDGE DETECTION,UNSHARP, AND MORE</p>
+												<p>BLUR, SHARPEN, EMBOSS, EDGE DETECTION,UNSHARP AND MORE</p>
 												<ul class="meta">
 													<li class="icon fa-clock">02 Oct</li>
 													
@@ -80,9 +80,11 @@
 											
 											<section>
 												<p>
-													El siguiente programa realiza la multiplicación de cada uno de los píxeles circundantes con una matriz llamada kernel o núcleo, como se vio en la documentación Kernel (image processing), que contiene diferentes valores predeterminados para aplicar correctamente las diferentes máscaras de convolución. El resultado de cada una de estas multiplicaciones se suman y este valor final es asignado a cada uno de los componentes RGB del nuevo píxel, el procedimiento se realiza conforme se explica en la documentación Spatial Enhancements.
-
-También es importante resaltar la gran importancia de la implementación de las máscaras de convolución ya que muchas de ellas son utilizados en la medicina para detectar cambios importantes o anomalías que no deberían tener el cuerpo, por ejemplo podemos rescatar la máscara de convolución de Frei-Chen, Robinson y Kirsch utilizadas para la detección de cambios bruscos del brillo de la imagen lo cual indicaría cambios en las propiedades de un material, discontinuaciones en la superficie, entre otras más, como se profundiza en la documentación Convolution Edge Finders.
+													El siguiente programa realiza la multiplicación de cada uno de los píxeles circundantes con una matriz llamada kernel o núcleo, como se ve en el articulo de wikipedia <a href="https://en.wikipedia.org/wiki/Kernel_(image_processing)">Kernel (image processing)</a>,
+													 que contiene ejemplos de las matrices para aplicar diferentes máscaras de convolución. El resultado de cada una de estas multiplicaciones se suman y el valor obtenido es asignado a cada uno de los componentes RGB del nuevo píxel.
+													 <br><br>
+													 Algunos de estos filtros son aplicables para mejorar la calidad de las imagenes originales, e incluso para la aplicacion de filtros como el de desenfoque, pero solo en ciertas zonas de la imagen, como por ejemplo los efectos de filtro
+													 en los celulares, luego de que la fotografia es tomada.
 												</p>
 												<hr>
 												<h4>Comandos por Teclado</h4>
@@ -135,7 +137,7 @@ También es importante resaltar la gran importancia de la implementación de las
 																<td><img src="images/des_cua.png" style="width:120px;vertical-align: middle" ></td>
 															</tr>
 															<tr>
-																<td><img src="images/8.svg" style="width:40px;vertical-align: middle" ></td>
+																<td><img src="images/8.png" style="width:40px;vertical-align: middle" ></td>
 																<td>Desenfoque Gaussiano</td>
 																<td><img src="images/des_gauss.png" style="width:140px;vertical-align: middle" ></td>
 															</tr>
