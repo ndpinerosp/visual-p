@@ -1,7 +1,7 @@
 # Taller  - Computación Visual
 ## Universidad Nacional de Colombia
 
-### Nicolas David Piñeros Pulido - ndpineros@unal.edu.co - ndpinerospa
+#### Nicolas David Piñeros Pulido - ndpineros@unal.edu.co - ndpinerosp
 
 ## 1. Procesamiento de imágenes
 
@@ -22,5 +22,4 @@
 * [Conversión a escala de grises: promedio _rgb_ y luma](https://ndpinerosp.github.io/visual-p/Sgray.html).
 * [Aplicación de algunas máscaras de convolución](https://ndpinerosp.github.io/visual-p/Smask.html).
 
-
- [Enunciado taller de procesamiento de imágenes ] (https://github.com/VisualComputing/imaging_ws)
+Enunciado taller de procesamiento de imágenes [aqui](https://github.com/VisualComputing/imaging_ws).

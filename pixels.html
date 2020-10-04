@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Shader Convolution Matrix</title>
+		<title>Pixels</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -28,6 +28,7 @@
 			<nav id="nav">
 				<ul>
 					<li><a href="index.html">Home</a></li>
+					<li class="current"><a href="index.html">Pixels</a></li>
 					<li><a>Software Processing</a>
 						<ul>
 							<li>
@@ -47,13 +48,13 @@
 							<li><a href="segmentacion.html">Image Segmentation</a></li>
 						</ul>
 					</li>
-					<li class="current"><a>Hardware Processing</a>
+					<li><a>Hardware Processing</a>
 						<ul>
 							<li><a href="Sgray.html">GrayScale</a></li>
 							<li><a href="Smask.html">Convolution Matrix</a></li>
 						</ul>
 					</li>
-					<li ><a href="#">About</a></li>
+					<li ><a href="#about" class="button scrolly">About</a></li>
 				</ul>
 			</nav>
 
@@ -69,63 +70,60 @@
 										<article class="box page-content">
 
 											<header>
-												<h2>Convolution Matrix Image and Video</h2>
-												<p>Semper amet scelerisque metus faucibus morbi congue mattis</p>
+												<h2>Pixels</h2>
+												<p>Painting Image with pixels</p>
 												<ul class="meta">
-													<li class="icon fa-clock">5 days ago</li>
-													<li class="icon fa-comments"><a href="#">1,024</a></li>
+													<li class="icon fa-clock">2 Oct</li>
 												</ul>
 											</header>
-
 											<section>
+												
+												<p>
+													Antes realizar el analisis de procesamiento de imágenes se hace necesaria una introducción previa a los conceptos básicos de las matrices de pixeles,
+													con el propósito de saber cómo cargar los pixeles a un lienzo y acceder al valor de cada pixel de manera individual para manipular su valor.
+												</p>
+												<p>
+													El siguiente estudio está basado en la documentación obtenida del tutorial de YouTube <a href="https://www.youtube.com/watch?v=nMUMZ5YRxHI">'11.3: The Pixel Array'</a> y el sitio web <a href="http://p5js.org">P5js</a>.
+													<br>
+													Para tener una mejor comprension acerca de como funciona una matriz de pixeles, esta debe de pensarse en una cuadricula como representación de un lienzo o una imagen, por ejemplo, una cuadricula de 8x8 estaría compuesta por 
+													64 cuadrados más pequeños los cuales representan los pixeles.
+											
+													Entonces Cuando se carga una imagen esta es representada internamente en p5.js mediante una arreglo llamado pixels[], en el cual los valores oscilan entre 0 y 255, correspondientes a cada color del lienzo.
+													este difiere un poco a como se maneja en Processing, dado que en p5.js un pixel toma 4 puntos de una matriz para un solo pixel, dado que el pixel se representa mediante los valores R, G, B, A (Rojo,Verde,Azul Alpha).
+												</p>
+												<img src="images/pixel_1.JPG" style="width:30%" class="center">
+												 
+												Ahora, esto significa que si el primer píxel en la pantalla es el de la esquina superior izquierda, este comenzaría en el índice 0 de la matriz y el segundo pixel en el índice 4 y asi sucesivamente hasta completar la longitud de la matriz.
+
+												<img src="images/pixel-array.JPG" style="width:28%" class="center">
+
+												Antes de acceder a esta matriz, los datos deben cargarse con la función loadPixels() y después de que se hayan modificado los datos de la matriz, se debe ejecutar la función updatePixels() para actualizar los cambios. para modificar estos valores 
+												es necesario ubicar el índice del componente mediante la siguiente ecuacion <strong>(x + y * width)*4</strong>. 
+												<br>
+												<br>
+												El siguiente programa tiene como propósito observar el comportamiento de cada uno de los pixeles del lienzo al modificar su valor accediendo a los componentes R, G, B de la matriz de pixeles.
+											
+											</section>
+											<hr>
+
+											
+												<h3>Comandos por teclado</h3>
+												<br>
+												<h5>Maximizar Componente</h5>
+											<div class="block">
+												<ul >
+													<li>Rojo ->> <img src="images/r.png" style="width:2%;vertical-align: middle"> </li>
+													<li>Verde ->> <img src="images/g.png" style="width:2%;vertical-align: middle"> </li>
+													<li>Azul ->> <img src="images/b.png" style="width:2%;vertical-align: middle"> </li>
+													<li>Reiniciar Imagen ->> <img src="images/0.png" style="width:2%;vertical-align: middle"> </li>
+												</ul>
+											</div>
 												<div style="width:800px; margin:0 auto;">
-													<iframe src="p5/hardware/mask_shader/index.html" style="position:center;height:500px;width:900px"></iframe>
+													<iframe src="p5/pixeles/index.html" style="position:center;height:300px;width:800px"></iframe>
 												</div>
-										
-										<p>
-												<p>
-													Phasellus quam turpis, feugiat sit amet ornare in, hendrerit in lectus.
-													Praesent semper mod quis eget mi. Etiam eu ante risus. Aliquam erat volutpat.
-													Aliquam luctus et mattis lectus sit amet pulvinar. Nam turpis nisi
-													consequat etiam lorem ipsum dolor sit amet nullam.
-												</p>
-											</section>
-
-											<section>
-												<h3>More intriguing information</h3>
-												<p>
-													Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ac quam risus, at tempus
-													justo. Sed dictum rutrum massa eu volutpat. Quisque vitae hendrerit sem. Pellentesque lorem felis,
-													ultricies a bibendum id, bibendum sit amet nisl. Mauris et lorem quam. Maecenas rutrum imperdiet
-													vulputate. Nulla quis nibh ipsum, sed egestas justo. Morbi ut ante mattis orci convallis tempor.
-													Etiam a lacus a lacus pharetra porttitor quis accumsan odio. Sed vel euismod nisi. Etiam convallis
-													rhoncus dui quis euismod. Maecenas lorem tellus, congue et condimentum ac, ullamcorper non sapien
-													vulputate. Nulla quis nibh ipsum, sed egestas justo. Morbi ut ante mattis orci convallis tempor.
-													Etiam a lacus a lacus pharetra porttitor quis accumsan odio. Sed vel euismod nisi. Etiam convallis
-													rhoncus dui quis euismod. Maecenas lorem tellus, congue et condimentum ac, ullamcorper non sapien.
-													Donec sagittis massa et leo semper a scelerisque metus faucibus. Morbi congue mattis mi.
-													Phasellus sed nisl vitae risus tristique volutpat. Cras rutrum commodo luctus.
-												</p>
-											</section>
-
-											<section>
-												<h3>So in conclusion ...</h3>
-												<p>
-													Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ac quam risus, at tempus
-													justo. Sed dictum rutrum massa eu volutpat. Quisque vitae hendrerit sem. Pellentesque lorem felis,
-													ultricies a bibendum id, bibendum sit amet nisl. Mauris et lorem quam. Maecenas rutrum imperdiet
-													vulputate. Nulla quis nibh ipsum, sed egestas justo. Morbi ut ante mattis orci convallis tempor.
-													Etiam a lacus a lacus pharetra porttitor quis accumsan odio. Sed vel euismod nisi. Etiam convallis
-													rhoncus dui quis euismod. Maecenas lorem tellus, congue et condimentum ac, ullamcorper non sapien.
-													Donec sagittis massa et leo semper a scelerisque metus faucibus. Morbi congue mattis mi.
-													Phasellus sed nisl vitae.
-												</p>
-												<p>
-													Suspendisse laoreet metus ut metus imperdiet interdum aliquam justo tincidunt. Mauris dolor urna,
-													fringilla vel malesuada ac, dignissim eu mi. Praesent mollis massa ac nulla pretium pretium.
-													Maecenas tortor mauris, consectetur pellentesque dapibus eget, tincidunt vitae arcu.
-												</p>
-											</section>
+												<p style="text-align:center"> Image of Großer Panda. Source: Wikipedia, the free encyclopedia.
+												
+							
 
 										</article>
 
@@ -135,7 +133,7 @@
 
 								<!-- Features -->
 									<section class="box features">
-										<h2 class="major"><span>A Major Heading</span></h2>
+										<h2 class="major"><span>Software Processing</span></h2>
 										<div>
 											<div class="row">
 												<div class="col-3 col-6-medium col-12-small">
