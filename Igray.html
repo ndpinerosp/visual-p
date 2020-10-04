@@ -78,6 +78,13 @@
 												</ul>
 											</header>
 											<section>
+												<p>
+													A continuación, se observará cómo se puede obtener una imagen a escala de grises a partir del Promedio de los componentes RGB de una imagen y el caculo del coeficiente Luma. Para ello este estudio esta basado en la documentación HSL and HSV y en gran medida estará basado en el ejemplo BLACK AND WHITE anteriormente trabajado, por lo tanto, no se profundizará en los cálculos de las expresiones, sino en la manera de aplicar estas expresiones a nuestro programa en p5.js para modificar la luminancia de la imagen y obtener los resultados esperados.
+												<br>
+												Para obtener una imagen a escala de grises por medio del siguiente programa, bastará con acceder al componente RGB de cada pixel de la imagen, hacer el cálculo del Promedio RGB o el coeficiente Luma utilizando las expresiones descritas en la tabla de Comandos por Teclado y por último se reemplazará el valor obtenido en cada uno de los componentes de color RGB del pixel. Adicionalmente también se observarán otras posibilidades para modificar la luminancia de la imagen y obtener la imagen a escala de grises a partir del calculo del Componente mas grande, el Rango medio y el Valor de Munsell visto en la documentación Lightness.
+												</p>
+												<hr>
+												<h4>Comandos por Teclado</h4>
 												<div class="table-wrapper text-center" >
 													<table>
 														<thead>
@@ -138,13 +145,8 @@
 													<iframe src="p5/software/grayscale/index.html" style="position:center;height:400px;width:800px"></iframe>
 												</div>
 										
-										<p>
-												<p>
-													Phasellus quam turpis, feugiat sit amet ornare in, hendrerit in lectus.
-													Praesent semper mod quis eget mi. Etiam eu ante risus. Aliquam erat volutpat.
-													Aliquam luctus et mattis lectus sit amet pulvinar. Nam turpis nisi
-													consequat etiam lorem ipsum dolor sit amet nullam.
-												</p>
+									
+												
 											</section>
 
 										</article>
@@ -154,72 +156,67 @@
 							<div class="col-12">
 
 								<!-- Features -->
-									<section class="box features">
-										<h2 class="major"><span>A Major Heading</span></h2>
-										<div>
-											<div class="row">
-												<div class="col-3 col-6-medium col-12-small">
+								<section class="box features">
+									<h2 class="major"><span>Software Processing</span></h2>
+									<div>
+										<div class="row">
+											<div class="col-3 col-6-medium col-12-small">
 
-													<!-- Feature -->
-														<section class="box feature">
-															<a href="#" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
-															<h3><a href="#">A Subheading</a></h3>
-															<p>
-																Phasellus quam turpis, feugiat sit amet ornare in, a hendrerit in
-																lectus dolore. Praesent semper mod quis eget sed etiam eu ante risus.
-															</p>
-														</section>
+												<!-- Feature -->
+													<section class="box feature">
+														<a href="Vgray.html" class="image featured"><img src="images/pic02.jpg" alt="" /></a>
+														<h3><a href="Vgray.html">Video GrayScale</a></h3>
+														<p>
+															Phasellus quam turpis, feugiat sit amet ornare in, a hendrerit in
+															lectus dolore. Praesent semper mod quis eget sed etiam eu ante risus.
+														</p>
+													</section>
 
-												</div>
-												<div class="col-3 col-6-medium col-12-small">
-
-													<!-- Feature -->
-														<section class="box feature">
-															<a href="#" class="image featured"><img src="images/pic02.jpg" alt="" /></a>
-															<h3><a href="#">Another Subheading</a></h3>
-															<p>
-																Phasellus quam turpis, feugiat sit amet ornare in, a hendrerit in
-																lectus dolore. Praesent semper mod quis eget sed etiam eu ante risus.
-															</p>
-														</section>
-
-												</div>
-												<div class="col-3 col-6-medium col-12-small">
-
-													<!-- Feature -->
-														<section class="box feature">
-															<a href="#" class="image featured"><img src="images/pic03.jpg" alt="" /></a>
-															<h3><a href="#">And Another</a></h3>
-															<p>
-																Phasellus quam turpis, feugiat sit amet ornare in, a hendrerit in
-																lectus dolore. Praesent semper mod quis eget sed etiam eu ante risus.
-															</p>
-														</section>
-
-												</div>
-												<div class="col-3 col-6-medium col-12-small">
-
-													<!-- Feature -->
-														<section class="box feature">
-															<a href="#" class="image featured"><img src="images/pic04.jpg" alt="" /></a>
-															<h3><a href="#">And One More</a></h3>
-															<p>
-																Phasellus quam turpis, feugiat sit amet ornare in, a hendrerit in
-																lectus dolore. Praesent semper mod quis eget sed etiam eu ante risus.
-															</p>
-														</section>
-
-												</div>
-												<div class="col-12">
-													<ul class="actions">
-														<li><a href="#" class="button large">Do Something</a></li>
-														<li><a href="#" class="button alt large">Think About It</a></li>
-													</ul>
-												</div>
 											</div>
-										</div>
-									</section>
+											<div class="col-3 col-6-medium col-12-small">
 
+												<!-- Feature -->
+													<section class="box feature">
+														<a href="Imask.html" class="image featured"><img src="images/pic04.jpg" alt="" /></a>
+														<h3><a href="Imask.html">Image Convolution Matrix</a></h3>
+														<p>
+															Phasellus quam turpis, feugiat sit amet ornare in, a hendrerit in
+															lectus dolore. Praesent semper mod quis eget sed etiam eu ante risus.
+														</p>
+													</section>
+
+											</div>
+											<div class="col-3 col-6-medium col-12-small">
+
+												<!-- Feature -->
+													<section class="box feature">
+														<a href="Vmask.html" class="image featured"><img src="images/pic03.jpg" alt="" /></a>
+														<h3><a href="Vmask.html">Video Convolution Matrix</a></h3>
+														<p>
+															Phasellus quam turpis, feugiat sit amet ornare in, a hendrerit in
+															lectus dolore. Praesent semper mod quis eget sed etiam eu ante risus.
+														</p>
+													</section>
+
+											</div>
+											<div class="col-3 col-6-medium col-12-small">
+
+												<!-- Feature -->
+													<section class="box feature">
+														<a href="segmentacion.html" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
+														<h3><a href="segmentacion.html">Image Segmentation</a></h3>
+														<p>
+															Phasellus quam turpis, feugiat sit amet ornare in, a hendrerit in
+															lectus dolore. Praesent semper mod quis eget sed etiam eu ante risus.
+														</p>
+													</section>
+
+											</div>
+											
+											
+										</div>
+									</div>
+								</section>
 							</div>
 						</div>
 					</div>
