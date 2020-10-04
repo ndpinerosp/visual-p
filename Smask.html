@@ -155,10 +155,16 @@
 										
 										<p>
 												<p>
-													Phasellus quam turpis, feugiat sit amet ornare in, hendrerit in lectus.
-													Praesent semper mod quis eget mi. Etiam eu ante risus. Aliquam erat volutpat.
-													Aliquam luctus et mattis lectus sit amet pulvinar. Nam turpis nisi
-													consequat etiam lorem ipsum dolor sit amet nullam.
+													Para esta implementacion se hizo el uso de <a href="https://visualcomputing.github.io/FragmentShaders/#/1">Shaders</a>, el cual se configura mediante un
+													archivo .frag , el cual se encarga de hacer las operaciones para realizar el calculo  de las mascaras de convolucion en pixeles de la imagen de manera paralela, a este archivo 
+													solo se le envia la imagen o video y y el calor que indica la mascara de convolucion a aplicar. Adicionalmente a esto la imagen se agrego com una textura al circulo mostrado en el ejemplo anterior.
+													<br><br>
+													En comparacion con ejemplos anteriores para este podemos observar que se tiene una mejor eficiencia al poder operar los pixeles de forma paralela
+													mediante el uso de la tarjeta grafica, ya que como se habia observado anteriormente en el ejemplo <a href="Vmask.html">Video Convolution Matrix</a>, notamos que la eficiencia del
+													video era de aproximadamente <strong> 1.8 F/S</strong> en promedio, al aplicar las diferentes mascaras de convolucion, lo que afectaba de manera muy significativa la fluidez en el video 
+													, en cambio para este ejemplo el conserva los fotogramas del video en aproximadamente <strong> 60 F/S</strong>, conservando la fluidez del video aplicando las diversas mascaras de convolucion
+													,lo cual comparandolo mediante la implementacion por Software muestra una mejoria en la fluidez, ya que es capaz de procesar el video con una buena tasa de Fotogramas, adicionalmente con el uso de shaders
+													se observa una mejoria en la utilizacion de recursos y una mayor rapidez en el procesamiento.
 												</p>
 											</section>
 
@@ -181,8 +187,7 @@
 															<a href="Vmask.html" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
 															<h3><a href="Vmask.html">Video Convolution Matrix</a></h3>
 															<p>
-																Phasellus quam turpis, feugiat sit amet ornare in, a hendrerit in
-																lectus dolore. Praesent semper mod quis eget sed etiam eu ante risus.
+																Blur, Sharpen, Emboss, Edge Detection,Unsharp, Framerate and more. 
 															</p>
 														</section>
 
@@ -194,8 +199,7 @@
 															<a href="Sgray.html" class="image featured"><img src="images/pic02.jpg" alt="" /></a>
 															<h3><a href="Sgray.html">Shader GrayScale</a></h3>
 															<p>
-																Phasellus quam turpis, feugiat sit amet ornare in, a hendrerit in
-																lectus dolore. Praesent semper mod quis eget sed etiam eu ante risus.
+																Shaders and WEBGL
 															</p>
 														</section>
 
