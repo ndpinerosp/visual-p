@@ -73,6 +73,15 @@ input, select, textarea {
 }
 
 /* Basic */
+.centro {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 50%;
+  }
+  .text-center {
+	text-align:center;
+}
 
 	html {
 		box-sizing: border-box;
@@ -1781,6 +1790,7 @@ input, select, textarea {
 
 /* Button */
 
+
 	input[type="button"],
 	input[type="submit"],
 	input[type="reset"],
@@ -1901,12 +1911,7 @@ input, select, textarea {
 			}
 
 /* Actions */
-.center {
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-	width: 50%;
-  }
+
 	ul.actions {
 		list-style: none;
 		padding-left: 0;

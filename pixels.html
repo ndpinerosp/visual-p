@@ -91,11 +91,11 @@
 													Entonces Cuando se carga una imagen esta es representada internamente en p5.js mediante una arreglo llamado pixels[], en el cual los valores oscilan entre 0 y 255, correspondientes a cada color del lienzo.
 													este difiere un poco a como se maneja en Processing, dado que en p5.js un pixel toma 4 puntos de una matriz para un solo pixel, dado que el pixel se representa mediante los valores R, G, B, A (Rojo,Verde,Azul Alpha).
 												</p>
-												<img src="images/pixel_1.JPG" style="width:30%" class="center">
+												<img src="images/pixel_1.JPG" style="width:30%" class="centro">
 												 
 												Ahora, esto significa que si el primer píxel en la pantalla es el de la esquina superior izquierda, este comenzaría en el índice 0 de la matriz y el segundo pixel en el índice 4 y asi sucesivamente hasta completar la longitud de la matriz.
 
-												<img src="images/pixel-array.JPG" style="width:28%" class="center">
+												<img src="images/pixel-array.JPG" style="width:28%" class="centro">
 
 												Antes de acceder a esta matriz, los datos deben cargarse con la función loadPixels() y después de que se hayan modificado los datos de la matriz, se debe ejecutar la función updatePixels() para actualizar los cambios. para modificar estos valores 
 												es necesario ubicar el índice del componente mediante la siguiente ecuacion <strong>(x + y * width)*4</strong>. 

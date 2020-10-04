@@ -28,6 +28,7 @@
 			<nav id="nav">
 				<ul>
 					<li><a href="index.html">Home</a></li>
+					<li><a href="pixels.html">Pixels</a></li>
 					<li class="current"><a>Software Processing</a>
 						<ul>
 							<li>
@@ -53,7 +54,7 @@
 							<li><a href="Smask.html">Convolution Matrix</a></li>
 						</ul>
 					</li>
-					<li ><a href="#">About</a></li>
+					<li ><a href="#about" class="button scrolly">About</a></li>
 				</ul>
 			</nav>
 
@@ -75,6 +76,61 @@
 													<li class="icon fa-clock">2 Oct 2020</li>
 												</ul>
 											</header>
+											<section>
+												<div class="table-wrapper text-center" >
+													<table>
+														<thead>
+															<th>Tecla</th>
+															<th>Luminancia</th>
+															<th>Expresion</th>
+														</thead>
+														<tbody>
+															<tr>
+																<td><img src="images/0.png" style="width:40px;vertical-align: middle" ></td>
+																<td>Original</td>
+																<td>(R,G,B)</td>
+															</tr>
+															<tr>
+																<td><img src="images/1.png" style="width:40px;vertical-align: middle" ></td>
+																<td>Media Aritmetica</td>
+																<td>I = Avg(R,G,B)</td>
+															</tr>
+															<tr>
+																<td><img src="images/2.png" style="width:40px;vertical-align: middle" ></td>
+																<td>Componente mas grande</td>
+																<td> M = Max(R,G,B)</td>
+															</tr>
+															<tr>
+																<td><img src="images/3.png" style="width:40px;vertical-align: middle" ></td>
+																<td>Rango Medio</td>
+																<td> L = (max(R,G,B)+min(R,G,B))/2 </td>
+															</tr>
+															<tr>
+																<td><img src="images/4.png" style="width:40px;vertical-align: middle" ></td>
+																<td>Luma Y601</td>
+																<td> Y601 = 0.2989*R + 0.5870*G + 0.1140*B </td>
+															</tr>
+															<tr>
+																<td><img src="images/5.png" style="width:40px;vertical-align: middle" ></td>
+																<td>Luma Y240</td>
+																<td> Y240 = 0.212*R + 0.701*G + 0.087*B </td>
+															</tr>
+															<tr>
+																<td><img src="images/6.png" style="width:40px;vertical-align: middle" ></td>
+																<td>Luma 709</td>
+																<td> Y709 = 0.2126*R + 0.7152*G + 0.0722*B </td>
+															</tr>
+															<tr>
+																<td><img src="images/7.png" style="width:40px;vertical-align: middle" ></td>
+																<td>Luma 2020</td>
+																<td> Y2020 = 0.2627*R + 0.6780*G + 0.0593*B </td>
+															</tr>
+														</tbody>
+													</table>
+
+												</div>
+
+											</section>
 
 											<section>
 												<div style="width:800px; margin:0 auto;">
