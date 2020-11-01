@@ -23,3 +23,6 @@
 * [Aplicación de algunas máscaras de convolución](https://ndpinerosp.github.io/visual-p/Smask.html).
 
 Enunciado taller de procesamiento de imágenes [aqui](https://github.com/VisualComputing/imaging_ws).
+
+## Taller ilusiones visuales 
+Taller ilusiones  [aqui] (https://ndpinerosp.github.io/visual-p/p5/ilusiones).
