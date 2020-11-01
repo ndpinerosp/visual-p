@@ -30,11 +30,11 @@ shape1(125,375,angle)
 shape1(375,375,angle)
 
 
-stroke(204);
-fill(204);
+stroke(210);
+fill(210);
   if (!click) {
-      stroke(204);
-      fill(204);
+      stroke(210);
+      fill(210);
       if (times%40!=0) {
         rect(250, 0, 250, 250);
       }
