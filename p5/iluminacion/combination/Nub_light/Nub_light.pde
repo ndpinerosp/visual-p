@@ -73,6 +73,7 @@ void setup() {
     // defines n2 visual representation
     @Override
     public void graphics(PGraphics pg) {
+      noStroke();
       pg.sphere(30);
     }
   };
