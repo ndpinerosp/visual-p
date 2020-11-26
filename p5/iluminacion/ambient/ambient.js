@@ -16,7 +16,7 @@ function setup() {
 }
 
 function draw() {
-  background(15);
+  background(0);
   X = slider.value();
   fill(255)
   text("Luz Ambiente",-100,-225)

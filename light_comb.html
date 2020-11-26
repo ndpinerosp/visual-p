@@ -106,8 +106,8 @@
 										<article class="box page-content">
 
 											<header>
-												<h2>Combination light</h2>
-												<p>Ambient, Diffuse, Specular</p>
+												<h2>Phong reflection model</h2>
+												<p>Ambient, Diffuse, Specular (Vertex and Pixels)</p>
 												<ul class="meta">
 													<li class="icon fa-clock">02 Oct</li>
 													
@@ -115,10 +115,9 @@
 											</header>
 											<section>
 												<p>
-													Una de las características más importantes en el procesamiento de videos es la frecuencia de fotogramas por segundo, el cerebro humano tiene la capacidad de procesar
-													 de 10 a 12 fotogramas por segundo; en caso de aumentar esa tasa. el cerebro lo percibe como movimiento, característica muy importante al momento de exponer una imagen.
+													El modelo de reflexión de Phong es un modelo de iluminación y sombreado que asigna brillo a los puntos de una superficie modelada
 													<br><br>
-													Al igual que en el estudio de procesamiento de imágenes, que se vio en el ejemplo <a>Image Convolution Matrix</a>
+													Al igual que en el estudio de procesamiento de imágenes, que se vio en el ejemplo <a href="https://es.wikipedia.org/wiki/Modelo_de_reflexi%C3%B3n_de_Phong">Phong reflexion model</a>
 													se realizó la siguiente implementación que muestra cómo realizar el procesamiento de escala de grises en videos. 
 													Para este fin se crearon dos lienzos, el primero permite visualizar el video original, el segundo lienzo es el encargado de mostrar los cambios
 													realizados en tiempo real.
@@ -130,87 +129,43 @@
 												<div class="table-wrapper text-center" >
 													<table>
 														<thead>
-															<th>Tecla</th>
+															<th>Comando</th>
 															<th>Operacion</th>
-															<th>Kernel(Nucleo)</th>
-															<th>Eficiencia</th>
 														</thead>
 														<tbody>
 															<tr>
-																<td><img src="images/0.png" style="width:40px;vertical-align: middle" ></td>
-																<td>Identidad</td>
-																<td><img src="images/identidad.png" style="width:80px;vertical-align: middle" ></td>
-																<td>60 F/S</td>
+																<td><img src="images/click.png" style="width:40px;vertical-align: middle" ></td>
+																<td>Intercambia modos de iluminacion</td>
 															
 															</tr>
 															<tr>
-																<td><img src="images/1.png" style="width:40px;vertical-align: middle" ></td>
-																<td>Acentuar Bordes</td>
-																<td><img src="images/acent_b.png" style="width:80px;vertical-align: middle" ></td>
-																<td>2.32 F/S</td>
-															</tr>
-															<tr>
-																<td><img src="images/2.png" style="width:40px;vertical-align: middle" ></td>
-																<td>Repujado</td>
-																<td><img src="images/repuj.png" style="width:80px;vertical-align: middle" ></td>
-																<td>2.14 F/S</td>
-															</tr>
-															<tr>
-																<td><img src="images/3.png" style="width:40px;vertical-align: middle" ></td>
-																<td>Deteccion de Bordes 1</td>
-																<td><img src="images/bord1.png" style="width:80px;vertical-align: middle" ></td>
-																<td>2.34 F/S</td>
-															</tr>
-															<tr>
-																<td><img src="images/4.png" style="width:40px;vertical-align: middle" ></td>
-																<td>Deteccion de Bordes 2</td>
-																<td><img src="images/bord2.png" style="width:80px;vertical-align: middle" ></td>
-																<td>2.26 F/S</td>
-															</tr>
-															<tr>
-																<td><img src="images/5.png" style="width:40px;vertical-align: middle" ></td>
-																<td>Deteccion de Bordes 3</td>
-																<td><img src="images/bord3.png" style="width:80px;vertical-align: middle" ></td>
-																<td>2.24 F/S</td>
-															</tr>
-															<tr>
-																<td><img src="images/6.png" style="width:40px;vertical-align: middle" ></td>
-																<td>Enfocar</td>
-																<td><img src="images/enfocar.png" style="width:80px;vertical-align: middle" ></td>
-																<td>2.30 F/S</td>
-															</tr>
-															<tr>
-																<td><img src="images/7.png" style="width:40px;vertical-align: middle" ></td>
-																<td>Desenfoque de cuadro</td>
-																<td><img src="images/des_cua.png" style="width:120px;vertical-align: middle" ></td>
-																<td>2.36 F/S</td>
-															</tr>
-															<tr>
-																<td><img src="images/8.png" style="width:40px;vertical-align: middle" ></td>
-																<td>Desenfoque Gaussiano</td>
-																<td><img src="images/des_gauss.png" style="width:140px;vertical-align: middle" ></td>
-																<td>1.16 F/S</td>
-															</tr>
-															<tr>
-																<td><img src="images/9.png" style="width:40px;vertical-align: middle" ></td>
-																<td>Unsharp Masking</td>
-																<td><img src="images/unsharp.png" style="width:140px;vertical-align: middle" ></td>
-																<td>1.12 F/S</td>
+																<td><img src="images/cursor.png" style="width:40px;vertical-align: middle" ></td>
+																<td>Interaccion con los objetos</td>
+																
 															</tr>
 														</tbody>
 													</table>
 											</section>
-
+											
 											<section>
-												<div style="width:800px; margin:0 auto;">
-													<iframe src="p5/iluminacion/fog/index.html" style="position:center;height:450px;width:800px"></iframe>
+												<div style="width:500px; margin:0 auto;">
+													<img src="p5/iluminacion/combination/nub.gif"  >
+												</div>
+												<br>
+												<hr>
+												<br>
+												<h3>Modelo con varias luces en nub</h3>
+												<p>
+													<br>
+													
+													En esta implementacion fue realizada implementado nub, para esto se crean 4 luces  con las cuales se puede interactuar para modificar la direccion
+													de la luz inside o refleja , adicionalmente tambien se permite el movimiento de la esfera para percibir este mismo objeto.
+											</p>
+												<div style="width:500px; margin:0 auto;">
+													<img src="p5/iluminacion/combination/nub.gif"  >
 												</div>
 							
-												<p>
-													Como podemos observar en la implementacion, la tasa de fotogramas por segundo decae con respecto a su valor original, pero en comparacion al ejemplo de escala de grises 
-													este tiene un muy mal comportamiento,ya que se observa muy poca fluidez del movimiento en el video, llegando a observarse el moviviento en aproximadamente 2 F/S, por lo cual
-													se puede decir que el procesamiento de las mascaras se hace mas complejo, por tanto no puede procesarlo tan rapido, reduciendo asi la fluidez del video. 
-											</p>
+												
 											</section>
 											
 										
@@ -224,59 +179,34 @@
 
 								<!-- Features -->
 								<section class="box features">
-									<h2 class="major"><span>Software Processing</span></h2>
+									<h2 class="major"><span>Illumination</span></h2>
 									<div>
 										<div class="row">
-											<div class="col-3 col-6-medium col-12-small">
+											<div class="col-3 col-6-medium col-12-small centro">
 
 												<!-- Feature -->
 													<section class="box feature">
-														<a href="Igray.html" class="image featured"><img src="images/pic03.jpg" alt="" /></a>
-														<h3><a href="Igray.html">Image GrayScale</a></h3>
+														<a href="fog.html" class="image featured"><img src="images/pic03.jpg" alt="" /></a>
+														<h3><a href="fog.html">Fog</a></h3>
 														<p>
-															Rgb Average and luma coefficient.
+															Fog effect.
 														</p>
 													</section>
 
 											</div>
-											<div class="col-3 col-6-medium col-12-small">
+											<div class="col-3 col-6-medium col-12-small centro">
 
 												<!-- Feature -->
 													<section class="box feature">
-														<a href="Vgray.html" class="image featured"><img src="images/pic02.jpg" alt="" /></a>
-														<h3><a href="Vgray.html">Video GrayScale</a></h3>
+														<a href="light_amb.html" class="image featured"><img src="images/pic02.jpg" alt="" /></a>
+														<h3><a href="light_amb.html">Ambient Light and attenuation</a></h3>
 														<p>
-															Rgb Average and luma coefficient, Frame rate
+															light
 														</p>
 													</section>
 
 											</div>
-											<div class="col-3 col-6-medium col-12-small">
-
-												<!-- Feature -->
-													<section class="box feature">
-														<a href="Imask.html" class="image featured"><img src="images/pic04.jpg" alt="" /></a>
-														<h3><a href="Imask.html">Image Convolution Matrix</a></h3>
-														<p>
-															Blur, Sharpen, Emboss, Edge Detection,Unsharp and more.
-														</p>
-													</section>
-
-											</div>
-											
-											<div class="col-3 col-6-medium col-12-small">
-
-												<!-- Feature -->
-													<section class="box feature">
-														<a href="segmentacion.html" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
-														<h3><a href="segmentacion.html">Image Segmentation</a></h3>
-														<p>
-															Graphical representation of the tonal distribution
-														</p>
-													</section>
-
-											</div>
-											
+																						
 											
 										</div>
 									</div>

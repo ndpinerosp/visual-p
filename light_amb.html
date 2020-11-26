@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Ambient Light</title>
+		<title>Ambient Light and attenuation</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -85,7 +85,7 @@
 					</li>
 					<li class="current"><a>Light</a>
                         <ul>
-							<li> <a href="light_amb.html">Ambient Light</a></li>
+							<li> <a href="light_amb.html">Ambient Light and attenuation</a></li>
 							<li> <a href="fog.html">Fog </a></li>
                             <li> <a href="light_comb.html">Combination light </a></li>
                         </ul>
@@ -106,26 +106,25 @@
 										<article class="box page-content">
 
 											<header>
-												<h2>Ambient Light</h2>
+												<h2>Ambient Light and attenuation</h2>
 												<p>Light</p>
 												<ul class="meta">
-													<li class="icon fa-clock">02 Oct</li>
+													<li class="icon fa-clock">23 Nov</li>
 													
 												</ul>
 											</header>
 											<section>
 												<p>
-													Una de las características más importantes en el procesamiento de videos es la frecuencia de fotogramas por segundo, el cerebro humano tiene la capacidad de procesar
-													 de 10 a 12 fotogramas por segundo; en caso de aumentar esa tasa. el cerebro lo percibe como movimiento, característica muy importante al momento de exponer una imagen.
+													La luz ambiental es luz de "fondo". Rebota en todas partes en todas direcciones y no proviene de un lugar específico. La luz ambiental ilumina cada rostro de un modelo independientemente de 
+													la orientación del rostro a una fuente de luz. Todos los rostros reciben la misma cantidad de luz ambiental.
 													<br><br>
-													Al igual que en el estudio de procesamiento de imágenes, que se vio en el ejemplo <a>Image Convolution Matrix</a>
-													se realizó la siguiente implementación que muestra cómo realizar el procesamiento de escala de grises en videos. 
-													Para este fin se crearon dos lienzos, el primero permite visualizar el video original, el segundo lienzo es el encargado de mostrar los cambios
-													realizados en tiempo real.
+													La luz ambiental se modela como un vector de tres componentes, donde cada valor representa un porcentaje de color que es visible. Por ejemplo, el "color" ambiental (0.2, 0.2, 0.2) significa 
+													que el 20% del color de un objeto es visible, mientras que (0.5, 0.5, 0.5) significa que el 50% del color de un objeto es visible. Los valores de los componentes suelen ser todos iguales, 
+													pero puede resaltar un color sobre otros utilizando valores independientes. Un “color” ambiental de (0.5, 0.1, 0.1) daría la impresión de que una escena tiene una fuente de luz roja en algún lugar del fondo.
 													<br><br>
-													La siguiente implementación se encarga de medir la tasa de fotogramas por segundo, al realizar la razón entre la cantidad de fotogramas que se expusieron desde el tiempo 0 hasta la actualidad y
-													 la variables que se encarga de obtener la diferencia de tiempo transcurrido en el paso de los fotogramas. Adicionalmente 
-													 muestra los cambios al aplicar diferentes escalas de grises, utilizando los mismos algoritmos que permitieron realizar el procesamiento de imágenes en los ejemplos anteriores, pero esta vez modificando los pixeles de una imagen capturada por video.
+													En este ejemplo se permite modificar el nivel de luz ambiental sobre un cubo.
+											
+													
 												</p>
 												<div class="table-wrapper text-center" >
 													<table>
@@ -135,20 +134,16 @@
 														</thead>
 														<tbody>
 															<tr>
-																<td><img src="images/0.png" style="width:40px;vertical-align: middle" ></td>
-																<td>Identidad</td>
+																<td><img src="images/click.png" style="width:40px;vertical-align: middle" ></td>
+																<td>Modificar Luz ambiente , Modificar distancia de la luz (atenuacion)</td>
 															
 															</tr>
 															<tr>
-																<td><img src="images/1.png" style="width:40px;vertical-align: middle" ></td>
-																<td>Acentuar Bordes</td>
+																<td><img src="images/cursor.png" style="width:40px;vertical-align: middle" ></td>
+																<td>Interaccion con el cubo</td>
 																
 															</tr>
-															<tr>
-																<td><img src="images/2.png" style="width:40px;vertical-align: middle" ></td>
-																<td>Repujado</td>
-																
-															</tr>
+															
 														</tbody>
 													</table>
 											</section>
@@ -157,11 +152,25 @@
 												<div style="width:500px; margin:0 auto;">
 													<iframe src="p5/iluminacion/ambient/index.html" style="position:center;height:500px;width:500px"></iframe>
 												</div>
-							
+												<hr>
+							<br>
+							<br>
+							<h3>Attenuation</h3>
 												<p>
-													Como podemos observar en la implementacion, la tasa de fotogramas por segundo decae con respecto a su valor original, pero en comparacion al ejemplo de escala de grises 
-													este tiene un muy mal comportamiento,ya que se observa muy poca fluidez del movimiento en el video, llegando a observarse el moviviento en aproximadamente 2 F/S, por lo cual
-													se puede decir que el procesamiento de las mascaras se hace mas complejo, por tanto no puede procesarlo tan rapido, reduciendo asi la fluidez del video. 
+													La atenuacion es el efecto de cuando la luz se debilita cuanto más se aleja de su fuente. la atenuación es proporcional a 1 / d2, 
+													donde d es la distancia entre la fuente de luz y un objeto. El uso de la función 1 / d2 hace que la luz disminuya muy rápidamente
+													, por lo que es común hacer que la atenuación sea proporcional a 1 / d. Observe que si d es mayor que 1, ambas ecuaciones calculan una fracción entre 0.0 y 1.0. 
+													La atenuación simplemente calcula un porcentaje de la luz original que se utiliza para colorear un píxel.
+
+													
+							
+												<p>Para esta implementacion se hizo uso de la funcion falloff, la cual calcula la atenuacion con la siguiente formula
+												<br>
+													falloff = 1 / (CONSTANT + d * LINEAR + ( d * d ) * QUADRATIC)
+												</p>
+							
+
+													
                                             </p>
                                             
                                             <div style="width:500px; margin:0 auto;">
@@ -180,59 +189,34 @@
 
 								<!-- Features -->
 								<section class="box features">
-									<h2 class="major"><span>Software Processing</span></h2>
+									<h2 class="major"><span>Illumination</span></h2>
 									<div>
 										<div class="row">
-											<div class="col-3 col-6-medium col-12-small">
+											<div class="col-3 col-6-medium col-12-small centro">
 
 												<!-- Feature -->
 													<section class="box feature">
-														<a href="Igray.html" class="image featured"><img src="images/pic03.jpg" alt="" /></a>
-														<h3><a href="Igray.html">Image GrayScale</a></h3>
+														<a href="fog.html" class="image featured"><img src="images/pic03.jpg" alt="" /></a>
+														<h3><a href="fog.html">Fog</a></h3>
 														<p>
-															Rgb Average and luma coefficient.
+															Fog effect.
 														</p>
 													</section>
 
 											</div>
-											<div class="col-3 col-6-medium col-12-small">
+											<div class="col-3 col-6-medium col-12-small centro">
 
 												<!-- Feature -->
 													<section class="box feature">
-														<a href="Vgray.html" class="image featured"><img src="images/pic02.jpg" alt="" /></a>
-														<h3><a href="Vgray.html">Video GrayScale</a></h3>
+														<a href="light_comb.html" class="image featured"><img src="images/pic02.jpg" alt="" /></a>
+														<h3><a href="light_comb.html">Combination light</a></h3>
 														<p>
-															Rgb Average and luma coefficient, Frame rate
+															specular, diffuse, ambient
 														</p>
 													</section>
 
 											</div>
-											<div class="col-3 col-6-medium col-12-small">
-
-												<!-- Feature -->
-													<section class="box feature">
-														<a href="Imask.html" class="image featured"><img src="images/pic04.jpg" alt="" /></a>
-														<h3><a href="Imask.html">Image Convolution Matrix</a></h3>
-														<p>
-															Blur, Sharpen, Emboss, Edge Detection,Unsharp and more.
-														</p>
-													</section>
-
-											</div>
-											
-											<div class="col-3 col-6-medium col-12-small">
-
-												<!-- Feature -->
-													<section class="box feature">
-														<a href="segmentacion.html" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
-														<h3><a href="segmentacion.html">Image Segmentation</a></h3>
-														<p>
-															Graphical representation of the tonal distribution
-														</p>
-													</section>
-
-											</div>
-											
+																						
 											
 										</div>
 									</div>
