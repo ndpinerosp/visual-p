@@ -117,15 +117,42 @@
 												<p>
 													El modelo de reflexión de Phong es un modelo de iluminación y sombreado que asigna brillo a los puntos de una superficie modelada
 													<br><br>
-													Al igual que en el estudio de procesamiento de imágenes, que se vio en el ejemplo <a href="https://es.wikipedia.org/wiki/Modelo_de_reflexi%C3%B3n_de_Phong">Phong reflexion model</a>
-													se realizó la siguiente implementación que muestra cómo realizar el procesamiento de escala de grises en videos. 
-													Para este fin se crearon dos lienzos, el primero permite visualizar el video original, el segundo lienzo es el encargado de mostrar los cambios
-													realizados en tiempo real.
+													La informacion de este modelo se encuentra en la pagina de wikipedia <a href="https://es.wikipedia.org/wiki/Modelo_de_reflexi%C3%B3n_de_Phong">Phong reflexion model</a>.
+													Describe la forma en que una superficie refleja la luz como una combinación 
+													de la reflexión difusa de las superficies rugosas con la reflexión especular de las superficies brillantes. El modelo también incluye un término de luz ambiental para simular la luz que se dispersa en el entorno.
+													<br>
+													<br>
+
+													Los principales componentes básicos del modelo de iluminación Phong constan de 3 componentes: iluminación ambiental, difusa y especular
+													<div style="width:700px; margin:0 auto;">
+														<img src="images/phong.png" style="width:700px " >
+													</div>
+													<br>
+													Doumento relacionado <a href="http://repositori.uji.es/xmlui/bitstream/handle/10234/120644/tema05.pdf?sequence=1&isAllowed=y">Modelos de iluminacion y sombreado</a>
+													
 													<br><br>
-													La siguiente implementación se encarga de medir la tasa de fotogramas por segundo, al realizar la razón entre la cantidad de fotogramas que se expusieron desde el tiempo 0 hasta la actualidad y
-													 la variables que se encarga de obtener la diferencia de tiempo transcurrido en el paso de los fotogramas. Adicionalmente 
-													 muestra los cambios al aplicar diferentes escalas de grises, utilizando los mismos algoritmos que permitieron realizar el procesamiento de imágenes en los ejemplos anteriores, pero esta vez modificando los pixeles de una imagen capturada por video.
+													<h3>Modelo de luz difusa</h3>
+													<p>
+												
+													El modelo de luz difusa, también conocida como modelo de Lambert,  va un paso más adelante que la luz ambiente, se encarga de simular la dirección de los rayos de luz que afectan directamente al objeto ,de tal forma que un rayo incidente es reflejado en muchos ángulos, para esto necesitamos
+													 los vectores normales que son perpendiculares a las caras o superficies del objeto y así mismo necesitaremos la dirección del rayo de luz. Luego calculamos el producto entre cada vector normal y la dirección del rayo de luz,
+													  y escogemos el máximo entre dicho resultado y 0 (para evitar negativos), este resultado suele ser conocido como término de Lambert. Al final, para obtener el resultado sobre el color de nuestro objeto, agregamos a la ecuación el 
+													  término de Lambert, multiplicando así nuestro resultado inicial de luz ambiente para cada cara del objeto.
+													 <div style="width:500px; margin:0 auto;">
+														<img src="images/difusa.jpg" style="width:500px " >
+													</div>
 												</p>
+													
+													<h3>Modelo de luz especular</h3>
+													<p>
+														La reflexión especular se produce cuando un rayo de luz incide sobre una superficie pulida (espejo) y cambia su dirección sin cambiar el medio por donde se propaga. esta también considera la posición y dirección desde las que se miran al objeto. Para esta simulación agregaremos entonces una variable
+														adicional que tendrá la función de representar la “fuerza especular”, también calcularemos el vector de reflejo teniendo en cuenta el vector de dirección de la vista hacia el objeto.
+														que para la luz difusa.
+													<div style="width:500px; margin:0 auto;">
+														<img src="images/specular.jpg" style="width:500px " >
+													</div>
+												</p>
+													</p>
 												<div class="table-wrapper text-center" >
 													<table>
 														<thead>
@@ -149,9 +176,25 @@
 											
 											<section>
 												<div style="width:500px; margin:0 auto;">
-													<img src="p5/iluminacion/combination/nub.gif"  >
+													<img src="p5/iluminacion/combination/VertLight.gif" " >
+													
+												
+												<p style="text-align:center"> Implementacion mediante Vertex </p>
+											</div>
+												<div style="width:500px; margin:0 auto;">
+													<img src="p5/iluminacion/combination/PixelLight.gif" >
+													
 												</div>
+												<p style="text-align:center"> Implementacion mediante Pixeles </p>
 												<br>
+												<p>
+													De acuerdo a las implementaciones mostradas anteriormente, podemos observar que el modelo phong implementado mediante 
+													<strong>pixeles</strong> tiene una visualizacion mas cercana al reflejo que se observa en la realidad. mientras que el modelo por <strong>vertex</strong>, 
+													se ve un poco mas rectangular, de tal forma que cuando se ve un reflejo este lo muestra en forma de rectangulo. Por otra parte
+													el modelo mediante pixeles tiene un acabado mas <strong>suavizado</strong> que el implementado mediante vertex. Adicionalmente respecto a la vizualizacion
+													de la iluminacion difusa podemos observar un comportamiento similar en la comparacion entre estas 2 implementaciones, dado que como se menciona 
+													anteriormente es mas suavizado uno que el otro.  
+												</p>
 												<hr>
 												<br>
 												<h3>Modelo con varias luces en nub</h3>
@@ -162,7 +205,7 @@
 													de la luz inside o refleja , adicionalmente tambien se permite el movimiento de la esfera para percibir este mismo objeto.
 											</p>
 												<div style="width:500px; margin:0 auto;">
-													<img src="p5/iluminacion/combination/nub.gif"  >
+													<img src="p5/iluminacion/combination/Nub_light.gif"  >
 												</div>
 							
 												

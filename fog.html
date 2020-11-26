@@ -124,6 +124,13 @@
 													este efecto de desvanecimiento.
 													<br><br>
 													La implementacion se basa en el documento de  <a href="https://webglfundamentals.org/webgl/lessons/webgl-fog.html">WebGL</a>, e implementando shaders.
+												<br>
+												<br>
+												Estos son los comans usados en el shader para calcular la densidad de la niebla y el color de esta.
+												<br><br>
+												<code> float fogAmount = smoothstep(u_fogNear, u_fogFar, v_fogDepth);
+													<br>
+													gl_FragColor = mix(color, u_fogColor, fogAmount);</code>
 												</p>
 												<div class="table-wrapper text-center" >
 													<table>

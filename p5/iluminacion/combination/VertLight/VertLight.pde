@@ -30,7 +30,7 @@ void draw() {
   
   shader(lightShader);
 
-  pointLight(255, 255, 255, width/2, height, 300);
+  pointLight(255, 255, 255, width/2, height, 250);
 
   translate(width/2, height/2);
   rotateY(angle);
